@@ -1,0 +1,6 @@
+{
+  "name": "CaterConnect",
+  "description": "Direct Work. Fair Pay. Reliable Teams. Connecting catering workers and event organisers directly across Coimbatore, Tamil Nadu, and India with zero agent commission.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

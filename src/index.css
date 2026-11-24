@@ -1,0 +1,157 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --cc-green: #4B6F1B;
+    --cc-green-hover: #3C5A15;
+    --cc-green-light: #5D8722;
+    --cc-accent: #A3C957;
+    --cc-accent-soft: #9CB77A;
+    --cc-bg: #FFFFFF;
+    --cc-surface: #F3F4F6;
+    --cc-ink: #111827;
+    --cc-muted: #6B7280;
+    --cc-error: #DC2626;
+    --cc-amber: #F59E0B;
+  }
+
+  * {
+    box-sizing: border-box;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  *::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100dvh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: manipulation;
+  }
+
+  html {
+    font-family: 'Poppins', 'Noto Sans Tamil', system-ui, -apple-system, sans-serif;
+    background-color: #ECEFF3;
+    color: #111827;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html[lang="ta"] {
+    font-family: 'Noto Sans Tamil', 'Poppins', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #ECEFF3;
+    color: #111827;
+  }
+
+  /* Keep inputs 16px+ to prevent mobile Safari/Chrome auto-zoom while fitting cleanly */
+  input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+  select,
+  textarea {
+    font-size: 16px;
+    max-width: 100%;
+    min-width: 0;
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  /* Prevent text selection on interactive controls, nav items, and cards */
+  button,
+  button *,
+  nav,
+  nav *,
+  [role="button"],
+  [role="button"] *,
+  .cc-card,
+  .cc-card *,
+  a {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Allow text selection in long readable prose and inputs */
+  p,
+  li,
+  .selectable-text {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+
+  button p,
+  [role="button"] p,
+  .cc-card p {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  /* Subtle native app tap press effect */
+  button:not(:disabled),
+  [role="button"],
+  .pressable {
+    transition: transform 100ms ease-out, background-color 150ms ease, border-color 150ms ease, opacity 150ms ease;
+  }
+
+  button:not(:disabled):active,
+  [role="button"]:active,
+  .pressable:active {
+    transform: scale(0.98);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    button:not(:disabled):active,
+    [role="button"]:active,
+    .pressable:active {
+      transform: none;
+    }
+  }
+
+  /* Override browser blue autofill background */
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #F3F4F6 inset !important;
+    -webkit-text-fill-color: #111827 !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+}
+
+.pt-safe {
+  padding-top: max(0.75rem, env(safe-area-inset-top));
+}
+
+.app-scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.app-scroll::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}

@@ -1,0 +1,117 @@
+{
+  "brand": "CaterConnect",
+  "welcome": {
+    "line1": "Direct Work.",
+    "line2": "Fair Pay.",
+    "line3": "Reliable Teams.",
+    "getStarted": "Get Started",
+    "alreadyHaveAccount": "Already have an account?",
+    "logIn": "Log In"
+  },
+  "lang": {
+    "english": "English",
+    "tamil": "தமிழ்",
+    "chooseTitle": "Choose your language",
+    "chooseSubtitle": "You can change this anytime from your profile.",
+    "continue": "Continue"
+  },
+  "common": {
+    "back": "Back",
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "close": "Close",
+    "submit": "Submit",
+    "retry": "Retry",
+    "search": "Search",
+    "clearFilters": "Clear filters",
+    "networkError": "Network error. Please check your connection and try again.",
+    "tagline1": "Direct Work. Fair Pay.",
+    "tagline2": "Reliable Catering Teams."
+  },
+  "role": {
+    "title": "Join CaterConnect",
+    "subtitle": "Zero agent commission. Direct pay and verified teams.",
+    "workerTitle": "Register as Worker",
+    "workerDesc": "Servers, buffet staff, kitchen helpers, cleaners & event crew",
+    "orgTitle": "Register as Organisation",
+    "orgDesc": "Catering companies, wedding halls & event organisers",
+    "alreadyMember": "Already registered?",
+    "logIn": "Log In"
+  },
+  "auth": {
+    "loginTitle": "Welcome Back",
+    "loginSubtitle": "Log in with your mobile number and verification code",
+    "phoneLabel": "Mobile Number",
+    "phonePlaceholder": "10-digit mobile number",
+    "sendCode": "Send Code",
+    "resendIn": "Resend in {{sec}}s",
+    "resendCode": "Resend Code",
+    "codeLabel": "6-digit Verification Code",
+    "codePlaceholder": "Enter 6-digit code",
+    "autofill": "Auto-fill",
+    "testModeBadge": "Test mode",
+    "testBanner": "TEST MODE: your code is {{code}}. No SMS was sent.",
+    "keepSignedIn": "Keep me signed in",
+    "logInBtn": "Log In",
+    "registerBtn": "Complete Registration",
+    "noAccount": "New to CaterConnect?",
+    "registerNow": "Register",
+    "alreadyRegisteredMsg": "Already registered, please log in"
+  },
+  "nav": {
+    "home": "Home",
+    "myGroups": "My Groups",
+    "findJobs": "Find Jobs",
+    "bookings": "Bookings",
+    "profile": "Profile",
+    "dashboard": "Dashboard",
+    "postJob": "Post Job",
+    "applications": "Applications"
+  },
+  "jobs": {
+    "showingCount": "Showing {{count}} jobs",
+    "sortNearest": "Sort by Nearest",
+    "searchBtn": "Search",
+    "allCities": "All Cities",
+    "allRoles": "All Roles",
+    "allServeTypes": "All Serve Types",
+    "minPay": "Min Pay (Rs)",
+    "maxDistance": "Max Distance (km)",
+    "onlyOpen": "Show only jobs with open vacancies",
+    "spotsRemaining": "{{count}} spots remaining",
+    "onlySpotLeft": "Only {{count}} spot left",
+    "onlySpotsLeft": "Only {{count}} spots left",
+    "fullBooked": "Full - all booked",
+    "bookedOf": "{{booked}} of {{total}} booked",
+    "demoTag": "DEMO",
+    "urgentTag": "URGENT",
+    "verified": "Verified",
+    "apply": "Apply",
+    "applyGroup": "Apply as Group",
+    "applied": "Applied",
+    "withdraw": "Withdraw application",
+    "appliedJobs": "Applied jobs",
+    "clearDemoApps": "Clear my demo applications",
+    "agentZero": "Agent commission: Rs 0. You receive the full amount.",
+    "openMaps": "Open in Google Maps",
+    "getDirections": "Get directions"
+  },
+  "verification": {
+    "countdownBanner": "Your account will be verified automatically in {{time}}",
+    "verifiedBanner": "Verified! You can now post jobs.",
+    "pendingWait": "Your account is pending verification. Once verified, you can post jobs immediately."
+  },
+  "attendance": {
+    "reminderTitle": "Event starts in 1 hour",
+    "reminderPrompt": "Your catering event starts in one hour. Please confirm your attendance.",
+    "yesComing": "YES, I AM COMING",
+    "cannotAttend": "I CANNOT ATTEND",
+    "arrivedBtn": "I have arrived",
+    "emergencyBanner": "EMERGENCY CATERING JOB AVAILABLE!"
+  },
+  "pwa": {
+    "installApp": "Install App",
+    "installIOS": "Install on iOS"
+  }
+}
