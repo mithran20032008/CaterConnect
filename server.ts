@@ -101,8 +101,51 @@ async function startServer() {
       res.sendFile(path.join(distDir, 'index.html'));
     });
   } else {
+    app.get('/@vite/client', (req, res, next) => {
+      delete req.headers['if-none-match'];
+      delete req.headers['if-modified-since'];
+      const origWrite = res.write.bind(res);
+      const origEnd = res.end.bind(res);
+      const origSetHeader = res.setHeader.bind(res);
+      const chunks: Buffer[] = [];
+
+      res.setHeader = ((name: string, value: number | string | readonly string[]) => {
+        if (name.toLowerCase() === 'content-length') return res;
+        return origSetHeader(name, value);
+      }) as typeof res.setHeader;
+
+      res.write = ((chunk: unknown) => {
+        if (chunk !== undefined && chunk !== null) {
+          chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk)));
+        }
+        return true;
+      }) as typeof res.write;
+
+      res.end = ((chunk?: unknown) => {
+        if (chunk !== undefined && chunk !== null) {
+          chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(String(chunk)));
+        }
+        const raw = Buffer.concat(chunks);
+        if (res.statusCode !== 200) {
+          res.write = origWrite;
+          res.end = origEnd;
+          return origEnd(raw);
+        }
+        const body = raw
+          .toString('utf8')
+          .replace(
+            'transport.connect(createHMRHandler(handleMessage));',
+            '/* HMR disabled: WebSocket connection skipped */'
+          );
+        origSetHeader('Content-Length', Buffer.byteLength(body));
+        return origEnd(body);
+      }) as typeof res.end;
+
+      next();
+    });
+
     const vite = await createViteServer({
-      server: {middlewareMode: true},
+      server: {middlewareMode: true, hmr: false, ws: false},
       appType: 'spa',
     });
     app.use(vite.middlewares);
