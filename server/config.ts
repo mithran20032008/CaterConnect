@@ -1,10 +1,13 @@
 import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
+import os from 'node:os';
 
 const rootDir = process.cwd();
-const dataDir = path.resolve(rootDir, 'data');
-const uploadsDir = path.resolve(rootDir, 'uploads');
+
+// Changed paths to use the system temp directory where writing files is permitted for free
+const dataDir = path.resolve(os.tmpdir(), 'data');
+const uploadsDir = path.resolve(os.tmpdir(), 'uploads');
 
 fs.mkdirSync(dataDir, {recursive: true});
 fs.mkdirSync(uploadsDir, {recursive: true});
